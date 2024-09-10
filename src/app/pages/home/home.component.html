@@ -33,10 +33,15 @@
             <td>
               <button class="btn btn-warning mx-2">Editar</button>
               <button class="btn btn-info mx-2">Detalhes</button>
-              <button class="btn btn-danger mx-2">Excluir</button>
+              <button class="btn btn-danger mx-2" (click)="deletar(usuario.id)">Excluir</button>
             </td>
           </tr>
         }
+      }@else {
+        <tr class="text-center">
+          <td colspan="7">Nenhum usuário cadastrado</td>
+        </tr>
+
       }
 
     </tbody>

@@ -34,5 +34,11 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  deletar(id: number | undefined){
+    this.serviceUsuario.DeletarUsuario(id).subscribe(response => {
+      window.location.reload();
+    })
+  }
+
 
 }
