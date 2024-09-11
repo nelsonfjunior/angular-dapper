@@ -21,5 +21,16 @@ export class UsuarioService {
     return this.http.delete<Response<UsuarioListar[]>>(`${this.ApiUrl}/${id}`);
   }
 
+  CriarUsuario(usuario: UsuarioListar) : Observable<Response<UsuarioListar[]>>{
+    return this.http.post<Response<UsuarioListar[]>>(`${this.ApiUrl}`, usuario);
+  }
+
+  GetUsuarioId(id: number): Observable<Response<UsuarioListar>>{
+    return this.http.get<Response<UsuarioListar>>(`${this.ApiUrl}/${id}`);
+  }
+
+  EditarUsuario(usuario: UsuarioListar): Observable<Response<UsuarioListar[]>>{
+    return this.http.put<Response<UsuarioListar[]>>(`${this.ApiUrl}`, usuario);
+  }
 
 }
