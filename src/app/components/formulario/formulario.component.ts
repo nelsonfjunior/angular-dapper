@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioListar } from '../../models/Usuario';
-
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 @Component({
   selector: 'app-formulario',
   standalone: true,
-  imports: [RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule, NgxMaskDirective, NgxMaskPipe],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'
 })
@@ -25,7 +25,7 @@ export class FormularioComponent implements OnInit {
       nomeCompleto: new FormControl(this.dadosUsuario ? this.dadosUsuario.nomeCompleto : ''),
       email: new FormControl(this.dadosUsuario ? this.dadosUsuario.email : ''),
       cargo: new FormControl(this.dadosUsuario ? this.dadosUsuario.cargo : ''),
-      salario: new FormControl(this.dadosUsuario ? this.dadosUsuario.salario : 0),
+      salario: new FormControl(this.dadosUsuario ? this.dadosUsuario.salario : ''),
       cpf: new FormControl(this.dadosUsuario ? this.dadosUsuario.cpf : ''),
       situacao: new FormControl(this.dadosUsuario ? this.dadosUsuario.situacao : true),
       senha: new FormControl(this.dadosUsuario ? this.dadosUsuario.senha : '')
